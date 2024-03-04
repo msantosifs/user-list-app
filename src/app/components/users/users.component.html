@@ -1,0 +1,25 @@
+<ng-container *ngIf="!(errorMessage$ | async); else error">
+  <table *ngIf="users" class="responsive-table">
+    <thead>
+    <tr>
+      <th *ngFor="let column of userColumns" (click)="onSort(column.name)">
+        <fa-icon [icon]="sortField === column.name && sortDirection === SortDirection.Asc ? faSortUp : faSortDown"></fa-icon>
+        <span>{{column.name}}</span>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.gender}}</td>
+      <td>{{user.status}}</td>
+    </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #error>
+  <span class="error-message">{{errorMessage$ | async}}</span>
+</ng-template>

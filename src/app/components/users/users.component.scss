@@ -1,0 +1,44 @@
+/* Responsive table dimensions */
+.responsive-table {
+  margin-right: 20px !important;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+th fa-icon{
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+.responsive-table th,
+.responsive-table td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.responsive-table thead th {
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.responsive-table tbody td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.responsive-table tr:nth-child(even), .responsive-table th {
+  background-color: #f2f2f2;
+}
+
+.responsive-table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.error-message {
+  padding: 20px;
+}

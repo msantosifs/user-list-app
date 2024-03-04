@@ -17,7 +17,7 @@ describe('WelcomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ WelcomeComponent ],
-      imports: [RouterTestingModule.withRoutes([{ path: 'user-list', component: EmptyRouteComponent }])],
+      imports: [RouterTestingModule.withRoutes([{ path: 'users', component: EmptyRouteComponent }])],
       providers: [
         { provide: UserService, useValue: {
             fetchUsers: jest.fn(() => of([]))
@@ -38,14 +38,14 @@ describe('WelcomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call fetchUsers function from UserService and navigate to user-list', () => {
+  it('should call fetchUsers function from UserService and navigate to users', () => {
     const spyFetchUsers = jest.spyOn(userService, 'fetchUsers');
     const spyRouterNavigate = jest.spyOn(router, 'navigate');
 
     component.fetchUserList();
 
     expect(spyFetchUsers).toHaveBeenCalled();
-    expect(spyRouterNavigate).toHaveBeenCalledWith(['user-list']);
+    expect(spyRouterNavigate).toHaveBeenCalledWith(['users']);
   });
 });
 
